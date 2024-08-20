@@ -10,7 +10,10 @@ namespace Entities.Concrete
     public class About : BaseEntity
     {
         public string Title { get; set; }
+        public string AboutDetail1 { get; set; }
         public string Description { get; set; }
+        public string AboutDetail2 { get; set; }
+        public string AboutDetail3 { get; set; }
         
     }
 }

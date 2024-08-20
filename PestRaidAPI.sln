@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PestRaidAPI", "PestRaidAPI\PestRaidAPI.csproj", "{AD4A7A94-3A15-463B-9C70-110735F7AA31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PestRaidAPI", "PestRaidAPI\PestRaidAPI.csproj", "{AD4A7A94-3A15-463B-9C70-110735F7AA31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{9D764CC9-91D7-4EC6-9BF7-9C9588506E49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{9D764CC9-91D7-4EC6-9BF7-9C9588506E49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{CB3F57DB-2638-403D-BBBD-FF95DA65EC90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{CB3F57DB-2638-403D-BBBD-FF95DA65EC90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{317ED664-F931-4CED-99A0-BE5E43E84E15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{317ED664-F931-4CED-99A0-BE5E43E84E15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{B45D8415-19AE-423C-9B92-604C283B3635}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{B45D8415-19AE-423C-9B92-604C283B3635}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PestRaidMVC", "PestRaidMVC\PestRaidMVC.csproj", "{D41A8311-1355-4571-B5BB-14D175174717}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{B45D8415-19AE-423C-9B92-604C283B3635}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B45D8415-19AE-423C-9B92-604C283B3635}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B45D8415-19AE-423C-9B92-604C283B3635}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D41A8311-1355-4571-B5BB-14D175174717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D41A8311-1355-4571-B5BB-14D175174717}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D41A8311-1355-4571-B5BB-14D175174717}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D41A8311-1355-4571-B5BB-14D175174717}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
