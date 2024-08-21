@@ -1,5 +1,8 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Business.Abstract;
 using Business.Concrete;
+using BusinessLayer.DependencyResolvers.AutoFac;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 
@@ -12,15 +15,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<IAboutDal, EfAboutDal>();
-builder.Services.AddSingleton<IAboutService, AboutManager>();
-
-builder.Services.AddSingleton<IServiceDal, EfServiceDal>();
-builder.Services.AddSingleton<IService, ServiceManager>();
-
-builder.Services.AddSingleton<IServiceAboutDal, EfServiceAboutDal>();
-builder.Services.AddSingleton<IServiceAbout, ServiceAboutManager>();
-
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory()).ConfigureContainer<ContainerBuilder>(build=>{
+    build.RegisterModule(new AutofacBusinessModule());
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
