@@ -31,6 +31,7 @@ namespace DataAccess.Concrete
         public DbSet<Team> Teams {  get; set; }
         public DbSet<Testimonial> Testimonials {  get; set; }
         public DbSet<ServiceAbout> ServiceAbouts { get; set; }
+        public DbSet<Partner> Partners { get; set; }
 
     }
 }
