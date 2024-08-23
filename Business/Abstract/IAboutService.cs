@@ -11,8 +11,9 @@ namespace Business.Abstract
     public interface IAboutService
     {
         IResult AddAbout(About about);
-        void DeleteAbout(About about);
-        void UpdateAbout(About about);
+        IResult DeleteAbout(About about);
+        IResult UpdateAbout(About about);
         IDataResult<List<About>> GetAllAbouts();
+        IDataResult<About> Get(int id);
     }
 }

@@ -28,30 +28,38 @@ namespace Business.Concrete
 
         }
 
-        public void DeleteAbout(About about)
+        public IResult DeleteAbout(About about)
         {
             _aboutDal.Delete(about);
+            return new SuccessResult("Deleted");
         }
 
+        public IDataResult<About> Get(int id)
+        {
+            var about = _aboutDal.Get(a => a.Id == id && a.IsDeleted == false);
+            if (about != null)
+            {
+                return new SuccessDataResult<About>(about);
+            }
+            else return new ErrorDataResult<About>(about,"Not Founded!");
+        }
 
         public IDataResult<List<About>> GetAllAbouts()
         {
-            var abouts = _aboutDal.GetAll(a=>a.IsDeleted == false);
+            var abouts = _aboutDal.GetAll(a => a.IsDeleted == false);
             if (abouts.Count > 0)
             {
                 return new SuccessDataResult<List<About>>(abouts);
 
             }
-            else
-            {
-                return new ErrorDataResult<List<About>>(abouts);
-            }
+            else return new ErrorDataResult<List<About>>(abouts);
+
 
         }
-
-        public void UpdateAbout(About about)
+        public IResult UpdateAbout(About about)
         {
             _aboutDal.Update(about);
+            return new SuccessResult("Updated");
         }
     }
 }

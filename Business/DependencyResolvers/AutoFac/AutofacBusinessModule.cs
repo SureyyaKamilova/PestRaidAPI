@@ -28,6 +28,9 @@ namespace BusinessLayer.DependencyResolvers.AutoFac
             builder.RegisterType<EfPartnerDal>().As<IPartnerDal>().SingleInstance();
             builder.RegisterType<PartnerManager>().As<IPartnerService>().SingleInstance();
 
+            builder.RegisterType<EfTeamDal>().As<ITeamDal>().SingleInstance();
+            builder.RegisterType<TeamManager>().As<ITeamService>().SingleInstance();
+
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
