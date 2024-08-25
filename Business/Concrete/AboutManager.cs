@@ -41,7 +41,7 @@ namespace Business.Concrete
             {
                 return new SuccessDataResult<About>(about);
             }
-            else return new ErrorDataResult<About>(about,"Not Founded!");
+            else return new ErrorDataResult<About>(about, "Not Founded!");
         }
 
         public IDataResult<List<About>> GetAllAbouts()

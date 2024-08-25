@@ -11,7 +11,7 @@ namespace Entities.Concrete
     {
         public string NewsTitle { get; set; }
         public string NewsContent { get; set; }
-        public string BNewsImage { get; set; }
+        public string NewsImage { get; set; }
         public DateTime NewsCreateDate { get; set; }
         public bool NewsStatus { get; set; }
         public int CategoryId { get; set; }
