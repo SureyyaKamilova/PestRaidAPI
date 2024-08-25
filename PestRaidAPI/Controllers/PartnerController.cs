@@ -38,5 +38,25 @@ namespace PestRaidAPI.Controllers
             else
                 return BadRequest();
         }
+        
+        [HttpPost("UpdatePartner")]
+        public IActionResult UpdatePartner(Partner partner)
+        {
+            var result = _partnerService.UpdatePartner(partner);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result.Message);
+        }
+        [HttpGet("GetPartner")]
+        public IActionResult GetPartner(int id)
+        {
+            var result = _partnerService.Get(id);
+            if (result != null)
+                return Ok(result);
+            else
+                return BadRequest(result.Message);
+        }
     }
 }

@@ -26,9 +26,20 @@ namespace Business.Concrete
             return new SuccessResult("Addedd");
         }
 
-        public void DeleteService(Service service)
+        public IResult DeleteService(Service service)
         {
             _serviceDal.Delete(service);
+            return new SuccessResult("Addedd");
+        }
+
+        public IDataResult<Service> Get(int id)
+        {
+            var service = _serviceDal.Get(s => s.Id == id && s.IsDeleted == false);
+            if (service != null)
+            {
+                return new SuccessDataResult<Service>(service);
+            }
+            else return new ErrorDataResult<Service>(service, "Not Founded!");
         }
 
         public IDataResult<List<Service>> GetAllServices()
@@ -45,9 +56,10 @@ namespace Business.Concrete
             }
         }
 
-        public void UpdateService(Service service)
+        public IResult UpdateService(Service service)
         {
             _serviceDal.Update(service);
+            return new SuccessResult("Addedd");
         }
     }
 }

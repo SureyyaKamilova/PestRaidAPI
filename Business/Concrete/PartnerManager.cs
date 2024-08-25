@@ -27,9 +27,20 @@ namespace Business.Concrete
             return new SuccessResult("Addedd");
         }
 
-        public void DeletePartner(Partner partner)
+        public IResult DeletePartner(Partner partner)
         {
             _partnerDal.Delete(partner);
+            return new SuccessResult("Deleted");
+        }
+
+        public IDataResult<Partner> Get(int id)
+        {
+            var partner = _partnerDal.Get(a => a.Id == id && a.IsDeleted == false);
+            if (partner != null)
+            {
+                return new SuccessDataResult<Partner>(partner);
+            }
+            else return new ErrorDataResult<Partner>(partner, "Not Founded!");
         }
 
         public IDataResult<List<Partner>> GetAllPartners()
@@ -47,9 +58,10 @@ namespace Business.Concrete
 
         }
 
-        public void UpdatePartner(Partner partner)
+        public IResult UpdatePartner(Partner partner)
         {
             _partnerDal.Update(partner);
+            return new SuccessResult("Updated");
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Business.Abstract;
+﻿using Autofac.Core;
+using Business.Abstract;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -43,6 +44,18 @@ namespace PestRaidAPI.Controllers
                 return Ok(value);
             }
             else return BadRequest("Not Addedd!");
+        }
+
+        [HttpPost("UpdateTeam")]
+        public IActionResult UpdateTeam(Team team)
+        {
+            var result = _teamService.UpdateTeam(team);
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result.Message);
         }
 
     }

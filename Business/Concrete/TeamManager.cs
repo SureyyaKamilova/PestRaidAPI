@@ -24,9 +24,10 @@ namespace Business.Concrete
             return new SuccessResult("Addedd");
         }
 
-        public void DeleteTeam(Team team)
+        public IResult DeleteTeam(Team team)
         {
             _teamDal.Delete(team);
+            return new SuccessResult("Deleted");
         }
 
         public IDataResult<Team> Get(int id)
@@ -55,9 +56,10 @@ namespace Business.Concrete
             }
         }
 
-        public void UpdateTeam(Team team)
+        public IResult UpdateTeam(Team team)
         {
             _teamDal.Update(team);
+            return new SuccessResult("Updated");
         }
     }
 }

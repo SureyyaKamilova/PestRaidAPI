@@ -11,8 +11,9 @@ namespace Business.Abstract
     public interface IPartnerService
     {
         IResult AddPartner(Partner partner);
-        void DeletePartner(Partner partner);
-        void UpdatePartner(Partner partner);
+        IResult DeletePartner(Partner partner);
+        IResult UpdatePartner(Partner partner);
         IDataResult<List<Partner>> GetAllPartners();
+        IDataResult<Partner> Get(int id);
     }
 }
