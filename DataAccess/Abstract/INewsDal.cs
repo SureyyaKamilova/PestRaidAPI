@@ -9,5 +9,6 @@ namespace DataAccess.Abstract
 {
     public interface INewsDal : IBaseRepository<News>
     {
+        List<News> GetListNewsWithCategory(int id);
     }
 }

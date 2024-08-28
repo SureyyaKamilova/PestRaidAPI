@@ -33,6 +33,9 @@ namespace BusinessLayer.DependencyResolvers.AutoFac
             builder.RegisterType<EfClientDal>().As<IClientDal>().SingleInstance();
             builder.RegisterType<ClientsManager>().As<IClientsService>().SingleInstance();
 
+            builder.RegisterType<EfNewsDal>().As<INewsDal>().SingleInstance();
+            builder.RegisterType<NewsManager>().As<INewsService>().SingleInstance();
+
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
                 .EnableInterfaceInterceptors(new ProxyGenerationOptions()
