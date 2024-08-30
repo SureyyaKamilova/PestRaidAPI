@@ -35,6 +35,11 @@ namespace BusinessLayer.DependencyResolvers.AutoFac
 
             builder.RegisterType<EfNewsDal>().As<INewsDal>().SingleInstance();
             builder.RegisterType<NewsManager>().As<INewsService>().SingleInstance();
+            builder.RegisterType<EfContactDal>().As<IContactDal>().SingleInstance();
+            builder.RegisterType<ContactManager>().As<IContactService>().SingleInstance();
+
+            builder.RegisterType<EfMessageDal>().As<IMessageDal>().SingleInstance();
+            builder.RegisterType<MessageManager>().As<IMessageService>().SingleInstance();
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
