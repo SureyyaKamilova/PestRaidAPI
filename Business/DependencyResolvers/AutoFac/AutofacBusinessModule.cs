@@ -40,6 +40,8 @@ namespace BusinessLayer.DependencyResolvers.AutoFac
 
             builder.RegisterType<EfMessageDal>().As<IMessageDal>().SingleInstance();
             builder.RegisterType<MessageManager>().As<IMessageService>().SingleInstance();
+            builder.RegisterType<EfProjectDal>().As<IProjectDal>().SingleInstance();
+            builder.RegisterType<ProjectManager>().As<IProjectService>().SingleInstance();
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
             builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
